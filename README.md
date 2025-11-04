@@ -1,16 +1,72 @@
-# React + Vite
+# Password Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek, modern React-based password generator with customizable options for creating secure passwords.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Customizable Length**: Generate passwords between 6-32 characters
+- **Numbers**: Toggle inclusion of numeric characters (0-9)
+- **Special Characters**: Add symbols for enhanced security (₹~`!@#$%^&*()_-+={}[]|)
+- **One-Click Copy**: Copy generated passwords to clipboard with visual feedback
+- **Real-time Generation**: Automatically generates new passwords when options change
+- **Responsive Design**: Clean, centered UI with orange and black theme
 
-## React Compiler
+## Installation
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Clone or download this component
+2. Ensure you have React installed in your project
+3. Import and use the component:
 
-## Expanding the ESLint configuration
+```jsx
+import App from './App';
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+function Main() {
+  return <App />;
+}
+```
+
+## Usage
+
+The password generator provides an intuitive interface:
+
+1. **Adjust Length**: Use the slider to set password length (6-32 characters)
+2. **Toggle Options**: 
+   - Check "Numbers" to include digits
+   - Check "Symbols" to include special characters
+3. **Generate**: Click "Generate" button to create a new password
+4. **Copy**: Click "Copy" to copy the password to your clipboard
+
+## Technologies Used
+
+- **React** (with Hooks: useState, useEffect, useCallback, useRef)
+- **Tailwind CSS** for styling
+- **Clipboard API** for copy functionality
+
+## Component Structure
+
+- Uses `useCallback` for optimized password generation and copy functions
+- `useRef` for direct DOM manipulation during copy operation
+- `useEffect` to regenerate password when dependencies change
+- Controlled components for all inputs
+
+## Customization
+
+You can easily customize:
+- **Colors**: Modify Tailwind classes (currently orange/black theme)
+- **Character Set**: Edit `charUse` string in `passwordGenerator` function
+- **Length Range**: Adjust `min` and `max` values on the range input
+- **Copy Feedback**: Customize timeout duration and button states
+
+## Browser Compatibility
+
+Requires a browser that supports:
+- ES6+ JavaScript
+- Clipboard API
+- Modern React (16.8+)
+
+## License
+
+Free to use and modify for personal or commercial projects.
+
+---
+
